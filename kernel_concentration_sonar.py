@@ -20,10 +20,10 @@ from qiskit_machine_learning.kernels import FidelityQuantumKernel
 path_2_data = 'datasets/sonar.all-data.csv'
 
 # Constants
-ZZ_reps = 6
+ZZ_reps = 1
 
 N_FEATURES_MIN = 2
-N_FEATURES_MAX = 10 #8
+N_FEATURES_MAX = 3
 N_FEATURES_LIST = [int(i) for i in np.arange(N_FEATURES_MIN,N_FEATURES_MAX+1,1)]
 ent_type = "full" #linear, circular, full
 
@@ -61,4 +61,4 @@ for i in tqdm(range(len(N_FEATURES_LIST))):
     kernel_entries[i] = independent_entries
 
 path_2_export = 'results/sonar/'
-pd.DataFrame(kernel_entries).to_csv(path_2_export+'new_entries/full/'+'recalculated_NF_'+str(N_FEATURES_MAX)+'_ZZ_'+str(ZZ_reps)+'.csv', index = False, header = False)
+pd.DataFrame(kernel_entries).to_csv(path_2_export+ent_type+'/NF_'+str(N_FEATURES_MAX)+'_ZZ_'+str(ZZ_reps)+'.csv', index = False, header = False)
