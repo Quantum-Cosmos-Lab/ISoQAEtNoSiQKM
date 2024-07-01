@@ -45,4 +45,4 @@ for i in range(len(N_FEATURES_LIST)):
     entropy_entries[i] = independent_entries
 
 path_2_export = 'results/sonar/'
-pd.DataFrame(entropy_entries).to_csv(path_2_export+'entropies/full_ent/'+'NF_'+str(N_FEATURES_MAX)+'_ZZ_'+str(ZZ_reps)+'.csv', index = False, header = False)
+pd.DataFrame(entropy_entries).to_csv(path_2_export+'entropies/'+ent_type+'/'+'NF_'+str(N_FEATURES_MAX)+'_ZZ_'+str(ZZ_reps)+'.csv', index = False, header = False)
